@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myanmar Location</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+</head>
+<body>
+
+    <h3 class="bg-primary text-white text-center p-3">Myanmar State / Division & Township / P-codes</h3>
+
+    <div class="container text-center mt-4">
+        <a href="mm.json" class="btn bg-dark text-white p-2" target="_blank">JSON Foramt Link</a>
+        <a href="https://www.burmalibrary.org/docs6/MIMU001_A3_SD%20&%20Township%20Overview.pdf" class="btn bg-dark text-white p-2" target="_blank">Reference Link</a> <br>
+        <button class="btn btn-danger text-white mt-3">We will make open data but data collect is'nt finished! coming soon!</button>
+    </div>
+
+  <div class="container mt-5">
+    <table class="table">
+        <tr>
+            <th>No</th>
+            <th>Division / State</th>
+            <th>Township</th>
+            <th>Pcode</th>
+          </tr>
+        <tbody id="myTable">
+        
+        </tbody>
+      </table>
+  </div>  
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>
+
+<script>
+	var myArray = [
+    {
+      "id":"1",
+      "division_state":"Ayeyarwady Division (MMR017)",
+      "township": "Bogale",
+      "pcode": "MMR017024"
+  },  
+
+
+  {
+    "id":"2",
+    "division_state":"Ayeyarwady Division (MMR017)",
+    "township": "Danubyu",
+    "pcode": "MMR017022"
+  },
+
+  {
+    "id":"3",
+    "division_state":"Ayeyarwady Division (MMR017)",
+    "township": "Dedaye",
+    "pcode": "MMR017026"
+  },
+
+  {
+    "id":"4",
+    "division_state":"Ayeyarwady Division (MMR017)",
+    "township": "Einme",
+    "pcode": "MMR017015"
+  },
+
+  {
+    "id":"5",
+    "division_state":"Ayeyarwady Division (MMR017)",
+    "township": "Hinthada",
+    "pcode": "MMR017008"
+  },
+
+  {
+    "id":"6",
+    "division_state":"Ayeyarwady Division (MMR017)",
+    "township": "Ingapu",
+    "pcode": "MMR017013"
+  },
+
+  {
+    "id":"7",
+    "division_state":"Ayeyarwady Division (MMR017)",
+    "township": "Kangyidaunt",
+    "pcode": "MMR017002"
+  },
+
+  {
+    "id":"8",
+    "division_state":"Ayeyarwady Division (MMR017)",
+    "township": "Kyaiklat",
+    "pcode": "MMR017025"
+  },
+
+  {
+    "id":"9",
+    "division_state":"Ayeyarwady Division (MMR017)",
+    "township": "Kyangin",
+    "pcode": "MMR017012"
+  },
+
+  {
+    "id":"10",
+    "division_state":"Ayeyarwady Division (MMR017)",
+    "township": "Kyaunggon",
+    "pcode": "MMR017007"
+  },
+
+  {
+    "id":"11",
+    "division_state":"Ayeyarwady Division (MMR017)",
+    "township": "Kyonpyaw",
+    "pcode": "MMR017005"
+  },
+
+  {
+    "id":"12",
+    "division_state":"Ayeyarwady Division (MMR017)",
+    "township": "Labutta",
+    "pcode": "MMR017016"
+  },
+
+  {
+    "id":"13",
+    "division_state":"Ayeyarwady Division (MMR017)",
+    "township": "Lemyethna",
+    "pcode": "MMR017010"
+  },
+
+  {
+    "id":"14",
+    "division_state":"Ayeyarwady Division (MMR017)",
+    "township": "Maubin",
+    "pcode": "MMR017019"
+  },
+
+  {
+    "id":"15",
+    "division_state":"Ayeyarwady Division (MMR017)",
+    "township": "Mawlamyinegyun",
+    "pcode": "MMR017018"
+  },
+
+  {
+    "id":"16",
+    "division_state":"Ayeyarwady Division (MMR017)",
+    "township": "Myanaung",
+    "pcode": "MMR017011"
+  },
+
+  {
+    "id":"17",
+    "division_state":"Ayeyarwady Division (MMR017)",
+    "township": "Myaungmya",
+    "pcode": "MMR017014"
+  },
+
+  {
+    "id":"18",
+    "division_state":"Ayeyarwady Division (MMR017)",
+    "township": "Ngapudaw",
+    "pcode": "MMR017004"
+  },
+
+  {
+    "id":"19",
+    "division_state":"Ayeyarwady Division (MMR017)",
+    "township": "Nyaungdon",
+    "pcode": "MMR017021"
+  },
+
+  {
+    "id":"20",
+    "division_state":"Ayeyarwady Division (MMR017)",
+    "township": "Pantanaw",
+    "pcode": "MMR017020"
+  },
+
+  {
+    "id":"21",
+    "division_state":"Ayeyarwady Division (MMR017)",
+    "township": "Pathein",
+    "pcode": "MMR017001"
+  },
+
+  {
+    "id":"22",
+    "division_state":"Ayeyarwady Division (MMR017)",
+    "township": "Pyapon",
+    "pcode": "MMR017023"
+  },
+
+  {
+    "id":"23",
+    "division_state":"Ayeyarwady Division (MMR017)",
+    "township": "Thabaung",
+    "pcode": "MMR017003"
+  },
+
+  {
+    "id":"24",
+    "division_state":"Ayeyarwady Division (MMR017)",
+    "township": "Wakema",
+    "pcode": "MMR017017"
+  },
+
+  {
+    "id":"25",
+    "division_state":"Ayeyarwady Division (MMR017)",
+    "township": "Yegyi",
+    "pcode": "MMR017006"
+  },
+
+  {
+    "id":"26",
+    "division_state":"Ayeyarwady Division (MMR017)",
+    "township": "Zalun",
+    "pcode": "MMR017009"
+  },
+
+  {
+    "id":"27",
+    "division_state":"Bago East Division (MMR007)",
+    "township": "Bago",
+    "pcode": "MMR007001"
+  },
+
+  {
+    "id":"28",
+    "division_state":"Bago East Division (MMR007)",
+    "township": "Daik-U",
+    "pcode": "MMR007007"
+  },
+
+  {
+    "id":"29",
+    "division_state":"Bago East Division (MMR007)",
+    "township": "Kawa",
+    "pcode": "MMR007003"
+  },
+
+  {
+    "id":"30",
+    "division_state":"Bago East Division (MMR007)",
+    "township": "Kyaukkyi",
+    "pcode": "MMR007011"
+  },
+
+
+  {
+    "id":"31",
+    "division_state":"Bago East Division (MMR007)",
+    "township": "Kyauktaga",
+    "pcode": "MMR007006"
+  },
+
+  {
+    "id":"32",
+    "division_state":"Bago East Division (MMR007)",
+    "township": "Nyaunglebin",
+    "pcode": "MMR007005"
+  },
+
+  {
+    "id":"33",
+    "division_state":"Bago East Division (MMR007)",
+    "township": "Oktwin",
+    "pcode": "MMR007013"
+  },
+
+  {
+    "id":"34",
+    "division_state":"Bago East Division (MMR007)",
+    "township": "Phyu",
+    "pcode": "MMR007012"
+  },
+
+  {
+    "id":"35",
+    "division_state":"Bago East Division (MMR007)",
+    "township": "Shwegyin",
+    "pcode": "MMR007008"
+  },
+
+
+  {
+    "id":"36",
+    "division_state":"Bago East Division (MMR007)",
+    "township": "Tantabin",
+    "pcode": "MMR007014"
+  },
+
+  {
+    "id":"37",
+    "division_state":"Bago East Division (MMR007)",
+    "township": "Taungoo",
+    "pcode": "MMR007009"
+  },
+
+  {
+    "id":"38",
+    "division_state":"Bago East Division (MMR007)",
+    "township": "Thanatpin",
+    "pcode": "MMR007002"
+  },
+
+
+  {
+    "id":"39",
+    "division_state":"Bago East Division (MMR007)",
+    "township": "Waw",
+    "pcode": "MMR007004"
+  },
+
+  {
+    "id":"40",
+    "division_state":"Bago East Division (MMR007)",
+    "township": "Yedashe",
+    "pcode": "MMR007010"
+  }
+	]
+	
+	buildTable(myArray)
+
+
+
+	function buildTable(data){
+		var table = document.getElementById('myTable')
+
+		for (var i = 0; i < data.length; i++){
+			var row = `<tr>
+							<td>${data[i].id}</td>
+							<td>${data[i].division_state}</td>
+							<td>${data[i].township}</td>
+                            <td>${data[i].pcode}</td>
+					  </tr>`
+			table.innerHTML += row
+
+
+		}
+	}
+
+</script>
+
+
